@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 100% 98%;
+    --foreground: 340 20% 40%;
+    --card: 0 0% 100%;
+    --card-foreground: 340 20% 40%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 20% 40%;
+    --primary: 330 100% 71%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 350 100% 95%;
+    --secondary-foreground: 340 20% 40%;
+    --muted: 350 50% 95%;
+    --muted-foreground: 340 15% 50%;
+    --accent: 350 100% 90%;
+    --accent-foreground: 340 20% 40%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 350 50% 90%;
+    --input: 350 50% 90%;
+    --ring: 330 100% 71%;
+    --radius: 0.625rem;
+    --sidebar-background: 20 100% 98%;
+    --sidebar-foreground: 340 20% 40%;
+    --sidebar-primary: 330 100% 71%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 350 100% 95%;
+    --sidebar-accent-foreground: 340 20% 40%;
+    --sidebar-border: 350 50% 90%;
+    --sidebar-ring: 330 100% 71%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-cream text-dusty-rose;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+}
+
+@layer components {
+  .cake-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .cake-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 3s infinite;
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
